@@ -1,0 +1,40 @@
+string s = "Reading newspaper daily is very beneficial";
+string[] sArr = s.Split(' ');
+int sArrLen = sArr.Length;
+int sLen = sArrLen;
+string[] sArrReverse= new string[sLen];
+
+bool g = true;
+int i = 0, k = sArrLen;
+while (g)
+{
+
+    //Console.WriteLine($"i is {i} and k is {k}");
+    
+    sArrReverse[i] = sArr[k-1];
+    //Console.WriteLine(sArr[k-1]);
+    i++;
+    k--;
+    if (i == sLen || k == 0) { 
+        g = false;
+    }
+}
+
+string sReverseString="";
+
+for (int l = 0;l < sLen; l++)
+{
+    if (l == 0)
+    {
+        sReverseString += sArrReverse[l];
+
+    }else if (l == sLen - 1)
+    {
+        sReverseString +=" "+ sArrReverse[l] + ".";
+    }
+    else 
+    {
+        sReverseString += " " + sArrReverse[l];
+    }
+}
+Console.WriteLine(sReverseString);
