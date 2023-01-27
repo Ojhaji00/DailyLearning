@@ -1,0 +1,146 @@
+//Solution to Q30 on w3resource.com for c# basic practices
+
+
+using System.Runtime.Intrinsics.X86;
+
+Console.Write("Type the Hexadecimal code: ");
+string s = Console.ReadLine(); // 23AF, a hexadecimal is equal to 9135 in decimal
+
+
+/*
+Console.WriteLine(s);
+List <char> sList = new List<char> {};
+sList.Add(s[0]);
+Console.WriteLine(sList[0]);
+
+for (int j =0; j < s.Length; j++)
+{
+    sList.Add(s[j]);
+}
+
+foreach (char i in sList)
+{
+    Console.WriteLine(s);
+}
+*/
+
+Array sArr =  s.ToArray();
+//Console.WriteLine(sArr.Length);
+/*
+foreach (char i in sArr)
+{
+    Console.WriteLine(Convert.ToString(i));
+}
+
+for (int i = 0;i < sArr.Length; i++)
+{
+    if (sArr[i] == 1)
+    {
+
+    }
+}*/
+double resultDecimal = 0;
+Array.Reverse(sArr);
+int j = 0;
+foreach (char c in sArr)
+{
+    if (c == 'F')
+    {
+        resultDecimal += (Math.Pow(16,j))*15;
+        j++;
+        //Console.WriteLine($"resultDecimal: {resultDecimal}, j: {j}");
+
+
+    }else if (c == 'E')
+    {
+        resultDecimal += (Math.Pow(16, j)) * 14;
+        j++;
+       // Console.WriteLine($"resultDecimal: {resultDecimal}, j: {j}");
+    }
+    else if (c == 'D')
+    {
+        resultDecimal += (Math.Pow(16, j)) * 13;
+        j++;
+        //Console.WriteLine($"resultDecimal: {resultDecimal}, j: {j}");
+    }
+    else if (c == 'C')
+    {
+        resultDecimal += (Math.Pow(16, j)) * 12;
+        j++;
+        //Console.WriteLine($"resultDecimal: {resultDecimal}, j: {j}");
+    }
+    else if (c == 'B')
+    {
+        resultDecimal += (Math.Pow(16, j)) * 11;
+        j++;
+        //Console.WriteLine($"resultDecimal: {resultDecimal}, j: {j}");
+    }
+        else if (c == 'A')
+    {
+        resultDecimal += (Math.Pow(16, j)) * 10;
+        j++;
+        //Console.WriteLine($"resultDecimal: {resultDecimal}, j: {j}");
+    }
+    else if (c == '9')
+    {
+        resultDecimal += (Math.Pow(16, j)) * 9;
+        j++;
+        //Console.WriteLine($"resultDecimal: {resultDecimal}, j: {j}");
+    }
+    else if (c == '8')
+    {
+        resultDecimal += (Math.Pow(16, j)) * 8;
+        j++;
+        //Console.WriteLine($"resultDecimal: {resultDecimal}, j: {j}");
+    }
+    else if (c == '7')
+    {
+        resultDecimal += (Math.Pow(16, j)) * 7;
+        j++;
+        //Console.WriteLine($"resultDecimal: {resultDecimal}, j: {j}");
+    }
+    else if (c == '6')
+    {
+        resultDecimal += (Math.Pow(16, j)) * 6;
+        j++;
+        //Console.WriteLine($"resultDecimal: {resultDecimal}, j: {j}");
+    }
+    else if (c == '5')
+    {
+        resultDecimal += (Math.Pow(16, j)) * 5;
+        j++;
+        //Console.WriteLine($"resultDecimal: {resultDecimal}, j: {j}");
+    }
+    else if (c == '4')
+    {
+        resultDecimal += (Math.Pow(16, j)) * 4;
+        j++;
+        //Console.WriteLine($"resultDecimal: {resultDecimal}, j: {j}");
+    }
+    else if (c == '3')
+    {
+        resultDecimal += (Math.Pow(16, j)) * 3;
+        j++;
+        //Console.WriteLine($"resultDecimal: {resultDecimal}, j: {j}");
+    }
+    else if (c == '2')
+    {
+        resultDecimal += (Math.Pow(16, j)) * 2;
+        j++;
+        //Console.WriteLine($"resultDecimal: {resultDecimal}, j: {j}");
+    }
+    else if (c == '1')
+    {
+        resultDecimal += (Math.Pow(16, j)) * 1;
+        j++;
+        //Console.WriteLine($"resultDecimal: {resultDecimal}, j: {j}");
+    }
+    else if (c == '0')
+    {
+        resultDecimal += (Math.Pow(16, j)) * 0;
+        j++;
+        //Console.WriteLine($"resultDecimal: {resultDecimal}, j: {j}");
+    }
+}
+
+Console.WriteLine($"\nAfter the converting the above Hexadecimal: {resultDecimal}"); 
